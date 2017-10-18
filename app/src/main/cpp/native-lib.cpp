@@ -1,8 +1,15 @@
 #include <jni.h>
 #include <string>
 
-extern "C"
+extern "C"{
+#include "libavcodec/avcodec.h"
+#include "libavformat/avformat.h"
+#include "libswscale/swscale.h"
+#include "libavutil/imgutils.h"
+#include "libavutil/avutil.h"
+};
 
+extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_syezon_ffmpeg_MainActivity_stringFromJNI(
         JNIEnv *env,
