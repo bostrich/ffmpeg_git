@@ -2,11 +2,11 @@
 #include <string>
 
 extern "C"{
-#include "libavcodec/avcodec.h"
-#include "libavformat/avformat.h"
-#include "libswscale/swscale.h"
-#include "libavutil/imgutils.h"
-#include "libavutil/avutil.h"
+#include "include/libavcodec/avcodec.h"
+#include "include/libavformat/avformat.h"
+#include "include/libswscale/swscale.h"
+#include "include/libavutil/imgutils.h"
+#include "include/libavutil/avutil.h"
 };
 
 extern "C"

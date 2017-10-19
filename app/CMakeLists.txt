@@ -17,30 +17,22 @@ set_target_properties( avcodec
                         PROPERTIES IMPORTED_LOCATION
                         ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libavcodec.so )
 
-add_library( avdevice
-             SHARED
-             IMPORTED )
+add_library( avdevice SHARED IMPORTED )
 set_target_properties( avdevice
                         PROPERTIES IMPORTED_LOCATION
                         ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libavdevice.so )
 
-add_library( avfilter
-             SHARED
-             IMPORTED )
+add_library( avfilter SHARED IMPORTED )
 set_target_properties( avfilter
                         PROPERTIES IMPORTED_LOCATION
                         ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libavfilter.so )
 
-add_library( avformat
-             SHARED
-             IMPORTED )
+add_library( avformat SHARED IMPORTED )
 set_target_properties( avformat
                         PROPERTIES IMPORTED_LOCATION
                         ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libavformat.so )
 
-add_library( avutil
-             SHARED
-             IMPORTED )
+add_library( avutil SHARED IMPORTED )
 set_target_properties( avutil
                         PROPERTIES IMPORTED_LOCATION
                         ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libavutil.so )
@@ -57,13 +49,21 @@ add_library( swresample
              IMPORTED )
 set_target_properties( swresample
                         PROPERTIES IMPORTED_LOCATION
-                        ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libswreasmple.so )
+                        ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libswresample.so )
 add_library( swscale
              SHARED
              IMPORTED )
 set_target_properties( swscale
                         PROPERTIES IMPORTED_LOCATION
                        ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libswscale.so )
+
+
+ add_library( x264
+              SHARED
+              IMPORTED )
+ set_target_properties( x264
+                         PROPERTIES IMPORTED_LOCATION
+                        ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libx264.so )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
 
@@ -76,7 +76,7 @@ add_library( # Sets the name of the library.
              # Provides a relative path to your source file(s).
              src/main/cpp/native-lib.cpp )
 
-include_directories(libs/include)
+include_directories(src/main/cpp/include)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
