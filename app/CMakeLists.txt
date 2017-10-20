@@ -57,13 +57,14 @@ set_target_properties( swscale
                         PROPERTIES IMPORTED_LOCATION
                        ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libswscale.so )
 
+add_library( x264
+             SHARED
+             IMPORTED )
+set_target_properties( x264
+                        PROPERTIES IMPORTED_LOCATION
+                       ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libx264.so )
 
- add_library( x264
-              SHARED
-              IMPORTED )
- set_target_properties( x264
-                         PROPERTIES IMPORTED_LOCATION
-                        ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libx264.so )
+
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
 
@@ -96,7 +97,7 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-                       native-lib avcodec avdevice avfilter avformat avutil postproc swresample swscale
+                       native-lib avcodec avdevice avfilter avformat avutil postproc swresample swscale x264
 
                        # Links the target library to the log library
                        # included in the NDK.
