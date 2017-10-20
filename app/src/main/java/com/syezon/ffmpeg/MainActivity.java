@@ -9,6 +9,15 @@ public class MainActivity extends AppCompatActivity {
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
+        System.loadLibrary("libavcodec");
+        System.loadLibrary("libavdevice");
+        System.loadLibrary("libavfilter");
+        System.loadLibrary("libavformat");
+        System.loadLibrary("libavutil");
+        System.loadLibrary("libpostproc");
+        System.loadLibrary("libswresample");
+        System.loadLibrary("libswscale");
+        System.loadLibrary("libx264");
     }
 
     @Override
