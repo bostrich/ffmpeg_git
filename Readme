@@ -1,0 +1,16 @@
+视频介绍：http://my.csdn.net/leixiaohua1020
+		https://pan.baidu.com/share/init?surl=bpm4QBX  密码：bngg
+		ffmpeg:
+		http://www.jianshu.com/p/ceaa286d8aff
+		http://www.jianshu.com/p/a2b24df52efe
+
+		dlopen failed:dlopen failed: could not load library "libx264.so" needed by "libavutil.so"
+
+        			System.loadLibrary ：so加载顺序？（要按照一定顺序加载）
+
+        		dlopen failed: cannot locate symbol "stpcpy" referenced by "libx264.so"...
+        			和NDK版本有关，高版本手机不会出现这个问题。将NDK版本设置为14（最低版本）
+
+        			libx264 使用静态库编译进去？
+
+        			cpu类型与支持的类型不匹配：
